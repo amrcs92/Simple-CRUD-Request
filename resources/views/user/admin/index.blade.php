@@ -33,8 +33,8 @@
                                     {{csrf_field()}}
                                     <input type="hidden" name="_method" value="PUT">
                                     <div class="btn-group">
-                                        <button type="submit" name="status" class="btn btn-success">Accept</button>
-                                        <button type="submit" name="status" class="btn btn-danger">Reject</button>
+                                        <button type="submit" name="status" value="accept" class="btn btn-success">Accept</button>
+                                        <button type="submit" name="status" value="reject" class="btn btn-danger">Reject</button>
                                     </div>
                                 </form>
                             </td>

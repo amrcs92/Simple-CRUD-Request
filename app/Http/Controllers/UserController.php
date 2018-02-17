@@ -97,9 +97,13 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         if(auth()->user()->role->name == 'Admin'){
-            URequest::findOrFail($id)->update(['request_type_id'=>$request->input('request_type')]);
-            URequest::findOrFail($id)->update(['status'=>$request->input('status')]);
-            return redirect()->route('user.admin.index');
+            if($request->get('request_type')){
+                URequest::findOrFail($id)->update(['request_type_id'=>$request->input('request_type')]);
+            }
+            if($request->get('status')){
+                URequest::findOrFail($id)->update(['status'=>$request->input('status')]);
+            }
+            return redirect()->route('user.index');
 
         } elseif(auth()->user()->role->name == 'Employee'){
             URequest::findOrFail($id)->update(['request_type_id'=>$request->input('request_type')]);
