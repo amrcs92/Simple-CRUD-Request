@@ -30,9 +30,12 @@
                             <td>{{ $request->status }}</td>
                             <td>
                                 <form action="/user/{{$request->id}}" method="post">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" name="submit" class="btn btn-danger">Delete</button>
+                                    {{csrf_field()}}
+                                    <input type="hidden" name="_method" value="PUT">
+                                    <div class="btn-group">
+                                        <button type="submit" name="status" class="btn btn-success">Accept</button>
+                                        <button type="submit" name="status" class="btn btn-danger">Reject</button>
+                                    </div>
                                 </form>
                             </td>
                         </tr>
