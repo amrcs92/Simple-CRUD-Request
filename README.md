@@ -16,7 +16,8 @@ give root to username as a local server & leave the password blank
 
 if you want to use migrate command: php artisan migrate you will insert some records into tables prefer to use this step below:
 
-import the SQL file in root project if you want to see the project working
+import the SQL file (request_task.sql) in root project if you want to see the project working
+make sure on creating the database make collation utf8mb4_unicode_ci
 
 
 Additional steps (optional): for local server ex: Xampp Server:
